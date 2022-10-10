@@ -1,0 +1,139 @@
+<div>
+  <div class="container-fluid">
+    <div >
+      <h1 class="header-Text">Create Event</h1>
+    </div>
+    <div class="header-Img">
+      <img
+        src="assets/create-event-header-icon (1).png"
+        alt="Create Event Image"
+      />
+    </div>
+  </div>
+
+  <div class="form">
+    <form [formGroup]="reactiveForm">
+      <div class="form-group">
+        <label for="eventname">Event Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="exampleeventname"
+          placeholder="Event Name"
+          formControlName="eventname"
+        />
+      </div>
+      <div
+        *ngIf="eventname.invalid && eventname.touched"
+        style="color: red; font-size: 0.5rem"
+      >
+        <span *ngIf="eventname.errors">Event name is required</span>
+      </div>
+      <div class="form-group">
+        <label for="eventdescription">Event Description</label>
+        <input
+          type="text"
+          class="form-control"
+          id="exampleeventdescription"
+          placeholder="Event Description"
+          formControlName="eventdescription"
+        />
+      </div>
+      <div
+        *ngIf="eventdescription.invalid && eventdescription.touched"
+        style="color: red; font-size: 0.5rem"
+      >
+        <span *ngIf="eventdescription.errors"
+          >Description should be 20 characters
+        </span>
+      </div>
+      
+      <div class="row">
+        <div class="mt-2 mb-2 col-lg-6 col-lg-6">
+          <label for="startdate">Start Date</label>
+          <input
+            type="date"
+            class="form-control"
+            id="startdate"
+            placeholder="DD/MM/YYYY"
+            formControlName="startDate"
+          />
+        </div>
+        <div class="mt-2 mb-2 col-lg-6 col-lg-6">
+          <label for="enddate">End Date</label>
+          <input
+            type="date"
+            class="form-control"
+            id="enddate"
+            
+            placeholder="DD/MM/YYYY"
+            formControlName="endDate"
+            (change)="dateValid()"
+          />
+          
+        </div>
+        <div
+          *ngIf="enddate.touched && !isDatevalid"
+          style="color: red; font-size: 0.5rem ; position: relative;left:24.5vw ;" 
+        >
+        End date should be greater than start date  
+        </div>
+        <div class="mt-2 mb-2 col-lg-6 col-lg-6">
+          <label for="exampleeventtype">Event Type</label>
+          <select id="eventtype" formControlName="eventType" class="form-select">
+            <option value="1">Social Event</option>
+            <option value="2">Sports Tournament</option>
+          </select>
+        </div>
+        <div class="mt-2 mb-2 col-lg-6 col-lg-6">
+          <label for="examplelocation">Location</label>
+          <select id="examplelocation" formControlName="location" class="form-select">
+            <option value="1">Bangalore</option>
+            <option value="2">kochi</option>
+            <option value="3">Hyderabad</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="exampleeventbanner">Event Banner</label>
+        <input
+          type="file"
+          #fileInput
+          (change)="onSelect($event)"
+          class="form-control"
+          id="exampleFormControlFile1"
+          formControlName="eventbanner"
+        />
+      </div>
+      <div class="form-group">
+        <label for="examplerulesandregulations"
+          >Events Rules and Regulation</label
+        >
+        <input type="text" class="form-control" id="examplerulesandregulations" placeholder="Events Rules and Regulation" formControlName="eventsruleandregulation" 
+         style="width:47vw; height:14vh"/>
+      </div>
+
+      <div
+        *ngIf="
+          eventsruleandregulation.invalid && eventsruleandregulation.touched
+        "
+        style="color: red; font-size: 0.5rem"
+      >
+        <span *ngIf="eventsruleandregulation.errors">
+          Rule and Regulation should be 20 characters.
+        </span>
+      </div>
+      <div class="btn">
+        <button
+          type="submit"
+          class="btn btn-primary"
+          (click)="createEvent(fileInput.files)"
+          
+        >
+          Create Events
+        </button>
+       
+      </div>
+    </form>
+  </div>
+</div>

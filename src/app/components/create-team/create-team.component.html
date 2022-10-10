@@ -1,0 +1,51 @@
+
+<div
+  class="modal"
+  tabindex="-1"
+  role="dialog"
+  [ngStyle]="{ display: isModalOpen?'block':'none' }"
+>
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="row g-0">
+            <div class="col-sm-9 popup-Heading">
+              <h4>Create a Team</h4>
+            </div>
+            <div class="col-sm-3 close-Popup">
+              <button type="button" class="btn-close close-button" aria-label="Close" (click)="closePopup()"></button>
+            </div>
+          </div>
+      <div class="modal-body">
+        <div class="form">
+            <form [formGroup]="reactiveForm">
+              <div class="form-group">
+                
+                <input
+                  type="text"
+                  class="form-control"
+                  id="teamName"
+                  placeholder="Enter a Team Name"
+                  formControlName="teamName"
+
+                  (change)="checkTeamExists()"
+                />
+                <p *ngIf="teamNameExists">
+                  Team name Already Exists for this event
+                </p>
+                <p *ngIf=" reactiveForm.controls.teamName.errors && reactiveForm.controls.teamName.touched">
+                  Team Name can contain a minimum of 5 and maximum of 15 characters
+                </p>
+                <p *ngIf="reactiveForm.controls.teamName.errors?.['required'] && reactiveForm.controls.teamName.touched">
+                    Team Name cannot be empty
+                </p>
+              </div>
+              </form>
+      </div>
+      <div class="footer">
+        <button class="btn button-color  add-team-button" [disabled]="!reactiveForm.valid" (click)="addTeam()">
+            Create
+          </button>
+      </div>
+    </div>
+  </div>
+</div>

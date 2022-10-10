@@ -1,0 +1,54 @@
+button {
+  background-color: #9150fc;
+  border: 0px;
+  vertical-align: middle;
+}
+.logo {
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+}
+.neuText {
+  color: #337ab7;
+  font-weight: 500;
+  cursor: pointer;
+}
+.avatar {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+}
+.username {
+  margin-top: 15%;
+  font-size: 13px;
+  font-weight: 500;
+}
+.designation {
+  margin-top: -10%;
+  font-size: 12px;
+  font-weight: 300;
+}
+nav {
+  padding: 0%;
+}
+.button-create-event {
+  margin-right: 10px;
+}
+.button-create-event:hover {
+  background-color: rgb(122, 96, 172);
+}
+.bell-icon {
+  margin-right: 10px;
+}
+.mail-icon {
+  margin-right: 10px;
+}
+.avatar-icon {
+  margin-right: 10px;
+}
+.list {
+  align-items: center;
+}
+.bottom-line {
+  border-bottom: 0.75px solid rgb(184, 178, 178);
+}

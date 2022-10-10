@@ -1,0 +1,50 @@
+
+
+.header-Text{
+    font-size: bold;
+}
+.bannerButton{
+    height: 1rem;
+    width: 3rem;
+    background: transparent;
+    border: 0;
+}
+
+
+.btn{
+    position: relative;
+    top: auto;
+    left: 250px;
+    margin-bottom: 2rem;
+}
+
+.container-fluid{
+    background-color: rgb(255,247,217);
+    height: 24vh;
+    width:95vw;
+    margin-top:5vh;
+    border-radius: 1vw;
+}
+.header-Text{
+    position: absolute;
+    top:150px;
+    left: 80px;
+
+}
+.header-Img{
+    height: 150px;
+    position: absolute;
+    top: 75px;
+    right: .08px;
+    max-width:100%;
+    
+}
+.form{
+    padding-left: 20rem;
+    width: 60rem;
+    justify-content: center;
+    height: 21px;
+    font-size: 15px;
+    margin-top:8vh;
+
+}

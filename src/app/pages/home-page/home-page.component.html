@@ -1,0 +1,101 @@
+<h4 *ngIf="!IsLoggedIn">This is Sign In Page</h4>
+<div *ngIf="IsLoggedIn">
+  <div class="d-flex justify-content-center">
+    <div class="imageContainer">
+      <img src="../../../assets/Saly-1.png" class="image" />
+    </div>
+  </div>
+  <div class="row">
+    <div class="filter-container">
+      <div style="border-bottom: 1px solid rgb(212, 202, 202)">
+        <p id="filter">Filter</p>
+      </div>
+      <p class="heading">Locations</p>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          value=""
+          id="flexCheckDefault"
+          (change)="locationFilter(0)"
+        />
+        <label class="form-check-label" for="flexCheckDefault">
+          All Locations
+        </label>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          value=""
+          id="flexCheckDefault"
+          name="location"
+          (change)="locationFilter(1)"
+        />
+        <label class="form-check-label" for="flexCheckDefault">
+          Bangalore
+        </label>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          value=""
+          id="flexCheckDefault"
+          name="location"
+          (change)="locationFilter(2)"
+        />
+        <label class="form-check-label" for="flexCheckDefault">
+          Hyderabad
+        </label>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          value=""
+          id="flexCheckDefault"
+          name="location"
+          (change)="locationFilter(3)"
+        />
+        <label class="form-check-label" for="flexCheckDefault"> Kochi </label>
+      </div>
+      <p class="heading">Price</p>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          value=""
+          id="flexCheckDefault"
+          name="price"
+          (change)="priceFilter(2)"
+        />
+        <label class="form-check-label" for="flexCheckDefault"> Paid </label>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          value=""
+          id="flexCheckDefault"
+          name="price"
+          (change)="priceFilter(1)"
+        />
+        <label class="form-check-label" for="flexCheckDefault"> Free </label>
+      </div>
+    </div>
+    <div class="events-container">
+      <div style="border-bottom: 1px solid rgb(212, 202, 202)">
+        <p id="allEvents">All Events</p>
+      </div>
+      <div class="row" *ngIf="filteredData">
+        <div *ngFor="let event of filteredData" class="card-container">
+          <app-card [event]="event"></app-card>
+        </div>
+      </div>
+      <div class="row" *ngIf="!filteredData">
+        <h3>There is no Upcoming Event</h3>
+      </div>
+    </div>
+  </div>
+</div>

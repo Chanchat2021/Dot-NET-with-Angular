@@ -1,0 +1,90 @@
+.container {
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: 20rem;
+}
+
+.card {
+  position: unset;
+}
+
+.scrollbar {
+
+  float: left;
+
+  background: #fff;
+
+  overflow-y: auto;
+
+  margin-bottom: 25px;
+}
+
+.scrollbar-primary::-webkit-scrollbar {
+  width: 12px;
+
+  background-color: transparent;
+}
+
+.scrollbar-primary::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+
+  box-shadow: unset;
+
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+
+  background-color: #9150fc;
+  ;
+}
+
+.button-color {
+
+  background-color: #9150fc;
+  color: white;
+}
+
+@media (min-width: 260px) and (max-width: 1000px) {}
+
+.addTeamMember {
+  padding: 24px 12px 24px 12px;
+}
+
+.close-Popup {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem 1rem 0rem;
+
+}
+
+.close-button {
+  height: 2rem;
+  width: 2rem;
+}
+
+.popup-Heading {
+  padding: 1.5rem 0.5rem 0rem 1.5rem;
+}
+
+.empty-Register-Page {
+  margin: 5rem;
+}
+
+.card-text {
+  max-width: 540px;
+  border: none;
+}
+
+.card-body {
+  padding: 12px 5px 8px 15px;
+}
+
+.profile-image-BorderLine {
+  height: 4rem;
+  width: 4rem;
+  border-radius: 5%;
+}
+
+.create-event-header-icon {
+  text-align: center;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}

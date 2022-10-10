@@ -1,0 +1,49 @@
+<nav class="navbar navbar-expand-lg bg-white">
+  <div class="container-fluid d-flex justify-content-between bottom-line">
+    <div class="navbar-brand" [routerLink]="'/'">
+      <img class="logo" src="../../../assets/headerIcon.png" />
+      <span class="neuText">NeuEvent</span>
+    </div>
+    <div>
+      <div>
+        <ul class="nav me-auto mb-2 mb-lg-0 list">
+          <li class="nav-item">
+            <button type="button" class="btn btn-primary button-create-event" *ngIf="IsLoggedIn"
+              [routerLink]="'create-event'">
+              Create Event
+            </button>
+          </li>
+          <li class="nav-item">
+            <button type="button" class="btn btn-primary button-create-event" (click)="login()"
+              *ngIf="!IsLoggedIn; else showSignOutButton">
+              Sign In
+            </button>
+            <ng-template #showSignOutButton>
+              <button type="button" class="btn btn-primary button-create-event" (click)="logout()" *ngIf="IsLoggedIn">
+                Sign Out
+              </button>
+            </ng-template>
+          </li>
+          <li class="nav-item bell-icon" *ngIf="IsLoggedIn">
+            <i class="bi bi-bell-fill"></i>
+          </li>
+          <li class="nav-item mail-icon" *ngIf="IsLoggedIn">
+            <i class="bi bi-envelope-fill"></i>
+          </li>
+          <li class="nav-item avatar-icon" *ngIf="IsLoggedIn">
+            <span>
+              <img [src]="ProfilePicLink" class="avatar"
+                onerror="this.onerror=null; this.src='../../assets/profile_image.jpeg'" />
+            </span>
+          </li>
+          <li class="nav-item" *ngIf="IsLoggedIn && this.profile">
+            <div>
+              <p class="username">{{ profile.displayName }}</p>
+              <p class="designation">{{ profile.jobTitle }}</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>

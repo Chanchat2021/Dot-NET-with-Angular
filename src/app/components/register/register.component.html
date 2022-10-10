@@ -1,0 +1,4 @@
+<span *ngIf="!register;else elseblock"><button type="button" class="btn btn-primary" (click)="registerToEvent()">Register Now</button></span>
+<ng-template #elseblock>
+    <button type="button" class="btn btn-outline-primary" (click)="displayRegistered()">Register Now</button>
+</ng-template>

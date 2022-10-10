@@ -1,0 +1,94 @@
+.banner {
+  height: 30vh;
+  width: 50%;
+  border-radius: 10px;
+  margin-top: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.img {
+  margin-top: 15px;
+  text-align: center;
+  padding-top: 80px;
+}
+.eventTitle {
+  font-size: 12px;
+  font-weight: 600;
+  margin-top: 20px;
+}
+.eventDescriptionTitle {
+  margin-top: 10px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.noOfTeamsParticipants {
+  margin-top: 25px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.eventStartDate {
+  float: left;
+  width: 50%;
+  font-size: 12px;
+  font-weight: 600;
+}
+.eventEndDate{
+  float: left;
+  width: 50%;
+  font-size: 12px;
+  font-weight: 600;
+  padding-left: 60px;
+
+}
+.row:after {
+  display: table;
+  clear: both;
+}
+.eventName {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: -15px;
+}
+.description {
+  font-size: 12px;
+}
+.startDate {
+  float: left;
+  width: 50%;
+  font-size: 12px; 
+}
+.endDate {
+  float: left;
+  width: 50%;
+  font-size: 12px;
+  padding-left: 60px;
+}
+.noOfTeamsValue {
+  font-size: 12px;
+}
+.locationValue {
+  font-size: 12px;
+}
+.rulesVaue {
+  font-size: 12px;
+}
+.container {
+  margin-bottom: 100px;
+  padding-left: 30px;
+  padding-right: 30px;
+  overflow:auto;
+}
+.locationTitle{
+  font-size: 12px;
+  font-weight: 600;
+  margin-top: 20px;
+}
+.rulesTitle{
+  margin-top: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.editButton{
+  float: right;
+}

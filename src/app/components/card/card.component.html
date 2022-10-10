@@ -1,0 +1,15 @@
+<div class="card">
+  <div [routerLink]="['../event-details', event.id]">
+    <img class="banner" src="data:image/png;base64,{{banner}}" *ngIf="banner!=null" />
+    <div class="card-body">
+      <h5 class="card-title eventName">{{ event.name }}{{ " Tournament" }}</h5>
+      <p id="location" class="card-text">{{ event.location }}</p>
+      <p class="row month">{{ event.startDate | date: "MMM" }}</p>
+      <p class="row day">{{ event.startDate | date: "dd" }}</p>
+      <p class="card-text description">{{ event.description | slice: 0:70 }}</p>
+    </div>
+  </div>
+  <div>
+    <button class="registerButton" (click)="register()">Register Now</button>
+  </div>
+</div>

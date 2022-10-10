@@ -1,0 +1,61 @@
+.banner {
+  height: 140px;
+  width: 100%;
+  border-radius: 5px;
+}
+#location {
+  color: rgb(156, 149, 149);
+  font-size: 13px;
+  margin-left: 35px;
+  margin-top: -10px;
+}
+.eventName {
+  font-size: 16px;
+  font-weight: bold;
+  margin-left: 35px;
+}
+.description {
+  font-size: 12px;
+  margin-left: 35px;
+  margin-top: -15px;
+  margin-bottom: -25px;
+}
+.card {
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  width: auto;
+  height: 300px;
+  overflow: clip;
+  margin: 5px;
+}
+.registerButton {
+  height: 33px;
+  width: 128px;
+  position: absolute;
+  margin-left: 50px;
+  border-radius: 3px;
+  color: white;
+  background: mediumpurple;
+  border-color: mediumpurple;
+  bottom: 10px;
+}
+.registerButton:hover {
+  background-color: blueviolet;
+}
+.month {
+  flex: 1;
+  margin-top: -56.5px;
+  font-size: 16px;
+  color: mediumpurple;
+  font-weight: bold;
+  margin-left: -5px;
+}
+.day {
+  margin-top: -20px;
+  font-size: 20px;
+  font-weight: bold;
+  margin-left: -5px;
+}
+.card-body {
+  position: relative;
+  margin-top: 10px;
+}

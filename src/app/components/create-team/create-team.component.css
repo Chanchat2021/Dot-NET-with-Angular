@@ -1,0 +1,35 @@
+.button-color {
+
+  background-color: #9150fc;
+  color: white;
+}
+.add-team-button{
+  float:right;
+}
+  .close-Popup {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1rem 1rem 0rem;
+  
+  }
+  
+  .close-button {
+    height: 2rem;
+    width: 2rem;
+  }
+  
+  .popup-Heading {
+    padding: 1.5rem 0.5rem 0rem 1.5rem;
+  }
+
+  
+  p{
+    color: red;
+   }
+   h4{
+    float: left;
+   }
+
+   .footer{
+    padding-top: 1rem;
+   }

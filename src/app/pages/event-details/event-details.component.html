@@ -1,0 +1,76 @@
+<div *ngIf="this.eventDetails">
+  <img class="banner" src="data:image/png;base64,{{banner}}" *ngIf="banner!=null"/>
+  <div class="container" *ngIf="this.eventDetails">
+    <form class="container">
+      <div class="form-group">
+        <label class="control-label col-sm-2 eventTitle">Event Name</label>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2 eventName">{{
+          eventDetails.name
+        }}</label>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2 eventDescriptionTitle"
+          >Event Description</label
+        >
+      </div>
+      <div class="form-group">
+        <p class="description">{{ eventDetails.description }}</p>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2 eventStartDate">Start Date</label>
+        <label class="control-label col-sm-2 eventEndDate">End Date</label>
+      </div>
+      <div class="form-group">
+        <label class="startDate">{{
+          eventDetails.startDate | date: "d/M/yyyy"
+        }}</label>
+        <label class="endDate">{{
+          eventDetails.endDate | date: "d/M/yyyy"
+        }}</label>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2 locationTitle">Location</label>
+        <div class="control-label col-sm-2 locationValue">
+          <label class="control-label col-sm-2 locationValue">{{
+            eventDetails.location
+          }}</label>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2 noOfTeamsParticipants"
+          >No of Teams Participating</label
+        >
+      </div>
+      <div class="control-label col-sm-2 noOfTeamsValue">
+        <label>{{ eventDetails.teams.length }}</label>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2 rulesTitle"
+          >Event Rules and Regulations</label
+        >
+      </div>
+      <div class="form-group">
+        <p class="rulesVaue">{{ eventDetails.rules }}</p>
+      </div>
+      <button
+        class="btn btn-primary editButton"
+        *ngIf="user.toLowerCase() == eventDetails.createdBy.toLowerCase()"
+      >
+        Edit Event
+      </button>
+      <div class="form-group">
+        <div class="row">
+        <div class="col-sm-6">
+          <app-register [eventId]="id"></app-register>
+        </div>
+        <div class="col-sm-6" style="float:right;">
+          <app-join-team [eventId]="id" (openCreateTeamModal)="createTeamModal($event)"></app-join-team>
+        </div>
+        <span *ngIf="openCreateModal"><app-create-team [eventId]="id" [teamList]="teams" [isModalOpen]="openCreateModal" (openCreateTeamModal)="createTeamModal($event)"></app-create-team></span>
+      </div>
+      </div>
+    </form>
+  </div>
+</div>

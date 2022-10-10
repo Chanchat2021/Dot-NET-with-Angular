@@ -1,0 +1,63 @@
+<div *ngIf="teamMemberExist == false">
+  <button type="button" class="btn btn-primary" (click)="openPopup()" style="float:right;"> Join Team </button>
+  <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{ display: displayStyle }">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="row-sm-2">
+          <div class="row g-0">
+            <div class="col-sm-9 popup-Heading">
+              <h4>Team List</h4>
+            </div>
+            <div class="col-sm-3 close-Popup">
+              <button type="button" class="btn-close close-button" aria-label="Close" (click)="closePopup()"></button>
+            </div>
+          </div>
+        </div>
+        <div class="row-sm-8">
+          <div class="modal-body container scrollbar scrollbar-primary">
+            <div class="row">
+              <div *ngIf="teams.length > 0; else elseStatement">
+                <span *ngFor="let team of teams">
+                  <div class="card-text ">
+                    <div class="row">
+                      <div class="col-sm-2 card-body">
+                        <img [src]="team.image" onerror="this.onerror=null; this.src='../../assets/profile_image.jpeg'"
+                          class="img-fluid rounded-start profile-image-BorderLine" />
+                      </div>
+                      <div class="col-sm-8">
+                        <div class="card-body">
+                          <h5 class="card-title">{{ team.name }}</h5>
+                          <p class="card-text">{{ team.createdBy }}</p>
+                        </div>
+                      </div>
+                      <div class="col-sm-2 addTeamMember">
+                        <span *ngIf="isPartOfTeam;else elseblock">
+                          <button class="btn button-color " (click)="checkIfTeamMemberExists()">
+                            Join
+                          </button>
+                        </span>
+                        <ng-template #elseblock><button class="btn button-color " (click)="addTeamMember(team.id,team.name)">
+                          Join
+                        </button></ng-template>
+                      </div>
+                    </div>
+                  </div>
+                </span>
+              </div>
+              <ng-template #elseStatement>
+                <p class="empty-Register-Page">
+                  There are no registered Teams for this Event.
+                </p>
+              </ng-template>
+            </div>
+          </div>
+        </div>
+        <div class="row-sm-2 create-event-header-icon">
+          <button type="button" class="btn button-color" (click)="openTeamPopup()">
+            Create Team
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
